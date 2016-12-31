@@ -12,6 +12,12 @@ class PicturesController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
     def pictures_params
       params.require(:picture).permit(:image, :content)
