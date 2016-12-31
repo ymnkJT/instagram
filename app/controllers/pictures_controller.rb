@@ -8,8 +8,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    Picture.create(pictures_params)
-    redirect_to root_path, notice: "写真を共有しました！"
+    @picture = Picture.new(pictures_params)
+    if @picture.save
+      redirect_to root_path, notice: "写真を共有しました！"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,8 +22,11 @@ class PicturesController < ApplicationController
 
   def update
     @picture = Picture.find(params[:id])
-    @picture.update(pictures_params)
-    redirect_to root_path, notice: "更新しました！"
+    if @picture.update(pictures_params)
+      redirect_to root_path, notice: "更新しました！"
+    else
+      render :new
+    end
   end
 
   def destroy
