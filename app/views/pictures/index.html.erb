@@ -3,5 +3,6 @@
 <% @pictures.each do |picture| %>
   <%= picture.image %>
   <%= picture.content %>
+  <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
   <br>
 <% end %>
