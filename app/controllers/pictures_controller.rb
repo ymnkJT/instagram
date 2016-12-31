@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :find_picture, only: [:edit, :update, :destroy]
+
   def index
     @pictures = Picture.all
   end
@@ -17,11 +19,9 @@ class PicturesController < ApplicationController
   end
 
   def edit
-    @picture = Picture.find(params[:id])
   end
 
   def update
-    @picture = Picture.find(params[:id])
     if @picture.update(pictures_params)
       redirect_to root_path, notice: "更新しました！"
     else
@@ -30,7 +30,6 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to root_path, notice: "削除しました！"
   end
@@ -38,5 +37,9 @@ class PicturesController < ApplicationController
   private
     def pictures_params
       params.require(:picture).permit(:image, :content)
+    end
+
+    def find_picture
+      @picture = Picture.find(params[:id])
     end
 end
