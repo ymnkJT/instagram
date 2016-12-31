@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
 
   def create
     Picture.create(pictures_params)
-    redirect_to root_path
+    redirect_to root_path, notice: "写真を共有しました！"
   end
 
   def edit
@@ -19,13 +19,13 @@ class PicturesController < ApplicationController
   def update
     @picture = Picture.find(params[:id])
     @picture.update(pictures_params)
-    redirect_to root_path
+    redirect_to root_path, notice: "更新しました！"
   end
 
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: "削除しました！"
   end
 
   private
