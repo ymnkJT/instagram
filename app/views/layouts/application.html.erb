@@ -14,8 +14,10 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <%= link_to "Instagram?", root_path, class: "navbar-brand" %>
-            <ul class="nav navbar-nav navber-right">
-              <li class="col-sm-4"><%= link_to "投稿", pictures_path, class: 'glyphicon glyphicon-home' %></li>
+            <ul class="col-xs-6 col-sm-4 nav navbar-nav head_icon">
+              <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-camera' %></li>
+              <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-user' %></li>
+              <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-log-out' %></li>
             </ul>
           </div>
       </header>
