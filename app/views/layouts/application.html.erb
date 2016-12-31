@@ -18,11 +18,15 @@
               <li class="col-xs-4 col-sm-4"><%= link_to "", new_picture_path, class: 'glyphicon glyphicon-camera' %></li>
 
               <% if user_signed_in? %>
-                <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-user' %></li>
-                <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-log-out' %></li>
+                <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path,
+                 class: 'glyphicon glyphicon-user' %></li>
+                <li class="col-xs-4 col-sm-4"><%= link_to "", destroy_user_session_path,
+                 class: 'glyphicon glyphicon-log-out' %></li>
               <% else %>
-                <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-log-in' %></li>
-                <li class="col-xs-4 col-sm-4"><%= link_to "", pictures_path, class: 'glyphicon glyphicon-pencil' %></li>
+                <li class="col-xs-4 col-sm-4"><%= link_to "", new_user_session_path,
+                 class: 'glyphicon glyphicon-log-in' %></li>
+                <li class="col-xs-4 col-sm-4"><%= link_to "", new_user_registration_path,
+                 class: 'glyphicon glyphicon-pencil' %></li>
               <% end %>
             </ul>
           </div>
