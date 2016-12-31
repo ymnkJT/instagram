@@ -1,6 +1,8 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <p><%= notice %></p>
+    <section class="main-header">
+      <p class="flash"><%= notice %><%= alert %></p>
+    </section>
     <h1>Pictures</h1>
 
     <% @pictures.each do |picture| %>
