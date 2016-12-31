@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'pictures#index'
+  devise_for :users
   resources :pictures, only: [:index, :new, :create, :edit, :update, :destroy]
 end
