@@ -1,12 +1,15 @@
-<p><%= notice %></p>
-<h1>Pictures</h1>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <h1>Pictures</h1>
 
-<% @pictures.each do |picture| %>
-  <%= picture.image %>
-  <%= picture.content %>
-  <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
-  <%= link_to "削除", picture_path(picture.id),
-    method: :delete,
-    data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
-  <br>
-<% end %>
+    <% @pictures.each do |picture| %>
+      <div class = "row">
+        <%= picture.image %>
+        <%= picture.content %>
+        <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'index_btn btn btn-default btn-sm btn btn-danger' %>
+        <%= link_to "編集", edit_picture_path(picture.id), class: 'index_btn btn btn-default btn-sm btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
