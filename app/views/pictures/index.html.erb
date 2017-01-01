@@ -7,6 +7,7 @@
 
     <% @pictures.each do |picture| %>
       <div class = "row">
+        <p><%= picture.user.name %></p>
         <%= picture.image %>
         <%= picture.content %>
         <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'index_btn btn btn-default btn-sm btn btn-danger' %>
