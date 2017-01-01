@@ -12,8 +12,9 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(pictures_params)
+    @picture.user_id = current_user.id
     if @picture.save
-      redirect_to root_path, notice: "写真を共有しました！"
+      redirect_to root_path, notice: "共有しました！"
     else
       render :new
     end
