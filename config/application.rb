@@ -7,6 +7,6 @@ module Instagram
     config.i18n.default_locale = :ja
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
+    config.action_view.field_error_proc = proc { |html_tag, _| html_tag }
   end
 end
