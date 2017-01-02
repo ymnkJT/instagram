@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all
-    binding.pry
   end
 
   def new
