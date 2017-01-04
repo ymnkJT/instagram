@@ -15,4 +15,4 @@
 #dotenv-rails
 .env
 
-~/public/uploads/picture/
+/public/uploads/picture/
